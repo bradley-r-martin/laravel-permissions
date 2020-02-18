@@ -1,0 +1,27 @@
+{
+  "name": "bradley-r-martin/laravel-permissions",
+  "description": "Permissions Helper for Laravel",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Brad Martin",
+      "email": "bradley.r.martin@me.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "bradley-r-martin/laravel-vivid": "1.0.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "BRM\\Permissions\\FrameworkServiceProvider"
+      ]
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "BRM\\Permissions\\": "./"
+    }
+  }
+}
