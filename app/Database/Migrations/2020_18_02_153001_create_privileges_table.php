@@ -17,6 +17,7 @@ class CreatePrivilegesTable extends Migration
           $table->increments('id');
           $table->string('name');
           $table->text('description')->nullable();
+          $table->boolean('invisible')->default(false);
           $table->timestamp('createdAt')->useCurrent();
           $table->timestamp('updatedAt')->nullable();
         });

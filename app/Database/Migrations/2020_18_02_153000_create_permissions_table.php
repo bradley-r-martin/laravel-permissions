@@ -18,6 +18,7 @@ class CreatePermissionsTable extends Migration
             $table->string('name');
             $table->string('group')->nullable();
             $table->text('description')->nullable();
+            $table->boolean('invisible')->default(false);
             $table->timestamp('createdAt')->useCurrent();
             $table->timestamp('updatedAt')->nullable();
         });
