@@ -29,7 +29,7 @@ class Permissions
         $this->hook('afterSave', function () {
             if (class_exists('\BRM\Roles\FrameworkServiceProvider')) {
                 if (isset($this->data['roles'])) {
-                    $this->record->roles->sync($this->data['roles']);
+                    $this->record->roles()->sync($this->data['roles']);
                 }
             }
         });
@@ -41,7 +41,7 @@ class Permissions
         $this->hook('afterSave', function () {
             if (class_exists('\BRM\Roles\FrameworkServiceProvider')) {
                 if (isset($this->data['roles'])) {
-                    $this->record->roles->sync($this->data['roles']);
+                    $this->record->roles()->sync($this->data['roles']);
                 }
             }
         });
