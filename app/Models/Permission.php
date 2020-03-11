@@ -19,10 +19,10 @@ class Permission extends Model
       'deletedAt'
     ];
 
-    public function role()
+    public function roles()
     {
       if (class_exists('\BRM\Roles\FrameworkServiceProvider')) {
-          return $this->belongsToMany(\BRM\Roles\app\Models\Role::class, 'rolePermission', 'permissionId', 'roleId');
+          return $this->belongsToMany(\BRM\Roles\app\Models\Role::class, 'rolePermissions', 'permissionId', 'roleId');
       }
       return null;
     }

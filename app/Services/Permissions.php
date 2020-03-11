@@ -23,4 +23,28 @@ class Permissions
           'description'=> ['string']
         ];
     }
+
+    public function store($data = [])
+    {
+        $this->hook('afterSave', function () {
+            if (class_exists('\BRM\Roles\FrameworkServiceProvider')) {
+                if (isset($this->data['roles'])) {
+                    $this->record->roles->sync($this->data['roles']);
+                }
+            }
+        });
+        return $this->vivid('store', $data);
+    }
+
+    public function update($data = [])
+    {
+        $this->hook('afterSave', function () {
+            if (class_exists('\BRM\Roles\FrameworkServiceProvider')) {
+                if (isset($this->data['roles'])) {
+                    $this->record->roles->sync($this->data['roles']);
+                }
+            }
+        });
+        return $this->vivid('update', $data);
+    }
 }
